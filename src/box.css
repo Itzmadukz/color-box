@@ -1,0 +1,9 @@
+.Box{ 
+    padding: 50px;
+    background-color: red;
+    border: 1px solid black;
+}
+
+div { 
+    display: flex;
+}
