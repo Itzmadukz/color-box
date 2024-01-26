@@ -1,7 +1,22 @@
-import "./box.css"
+import "./Box.css"
+import { useState } from "react";
 
-export default function Box() {
+function randomChoice(arr) {
+    const idx = Math.floor(Math.random() * arr.length);
+    return arr[idx];
+}
 
-    return <div className="Box"></div>
-
+function Box({ colors }) {
+    const [color, setColor] = useState(randomChoice(colors));
+    const changeColor = () => {
+        const randomColor = randomChoice(colors);
+        setColor(randomColor);
+    };
+    return <div
+        className="Box"
+        onClick={changeColor}
+        style={{ backgroundColor: color }}
+    ></div>
 };
+
+export default Box;
